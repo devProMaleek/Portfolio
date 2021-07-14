@@ -301,6 +301,9 @@ nav{
 .home__scroll-arrow{
     font-size: 1.25rem;
 }
+.typing{
+    color: var(--first-color);
+}
 
 /*BUTTONS*/
 .button{

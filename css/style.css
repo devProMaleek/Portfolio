@@ -439,7 +439,7 @@ nav{
 
 @keyframes example {
     from {width: 0%;}
-    to {width: 90%;}
+    to {width: 80%;}
 }
 .skills__html{
     width: 0%;
@@ -448,29 +448,32 @@ nav{
     animation-fill-mode: forwards;
 }
 .skills__css{
-    width: 80%;
-}
-.skills__js{
     width: 70%;
 }
+.skills__js{
+    width: 60%;
+}
 .skills__react{
-    width: 40%;
+    width: 30%;
 }
 .skills__git{
-    width: 80%;
+    width: 50%;
+}
+.skills__bootstrap{
+    width: 10%;
 }
 
 .skills__php{
-    width: 60%;
-}
-.skills__laravel{
     width: 30%;
 }
-.skills__node{
+.skills__laravel{
     width: 10%;
 }
+.skills__node{
+    width: 5%;
+}
 .skills__mysql{
-    width: 60%;
+    width: 30%;
 }
 .skills__graphql{
     width: 0;
@@ -478,7 +481,7 @@ nav{
 
 
 .skills__figma{
-    width: 60%;
+    width: 40%;
 }
 .skills__sketch{
     width: 0;
@@ -486,13 +489,13 @@ nav{
 
 
 .skills__python{
-    width: 60%;
+    width: 50%;
 }
 .skills__machine-learning{
-    width: 40%;
+    width: 20%;
 }
 .skills__powerbi{
-    width: 30%;
+    width: 20%;
 }
 .skills__deep-learning{
     width: 0;
@@ -665,7 +668,9 @@ nav{
     width: 265px;
     border-radius: .5rem;
     justify-self: center;
-}.portfolio__title{
+    height: auto;
+}
+.portfolio__title{
     font-size: var(--h3-font-size);
     margin-bottom: var(--mb-0-5);
  }

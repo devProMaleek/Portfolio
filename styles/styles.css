@@ -608,8 +608,10 @@ section {
   color: var(--color-white);
   resize: none;
 }
+
 .contact-content-con .right-contact .i-c-2 {
   display: flex;
+  justify-content: space-between;
 }
 .contact-content-con .right-contact .i-c-2 :last-child {
   margin-left: 1.5rem;
@@ -831,6 +833,7 @@ section {
 }
 
 .smallError {
+  display: block;
   color: red;
   font-size: 12px;
   margin-top: 5px;

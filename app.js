@@ -16,6 +16,14 @@
   let email = document.getElementById('email');
   let subject = document.getElementById('subject');
   let message = document.querySelector('textarea');
+  let submitBtn = document.getElementById('submit-btn');
+
+  console.log(submitBtn)
+
+  submitBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    form.requestSubmit();
+  });
 
   const formData = {
     name: '',
@@ -47,60 +55,73 @@
     message: false,
   };
 
-  const validateInputs = () => {
+  const validateName = () => {
     let nameValue = name.value.trim();
-    let emailValue = email.value.trim();
-    let subjectValue = subject.value.trim();
-    let messageValue = message.value.trim();
-
-    name.addEventListener('change', () => {
-      if (nameValue === '') {
-        setErrorFor('name', 'Name cannot be blank');
-      } else {
-        setSuccessFor('name');
-        isInputsValid.name = true;
-      }
-    });
-
-    email.addEventListener('change', () => {
-      if (emailValue === '') {
-        setErrorFor('email', 'Email cannot be blank');
-      } else if (!isEmail(emailValue)) {
-        setErrorFor('email', 'Email is not valid');
-      } else {
-        setSuccessFor('email');
-        isInputsValid.email = true;
-      }
-    });
-
-    subject.addEventListener('change', () => {
-      if (subjectValue === '') {
-        setErrorFor('subject', 'Subject cannot be blank');
-      } else {
-        setSuccessFor('subject');
-        isInputsValid.subject = true;
-      }
-    });
-
-    message.addEventListener('change', () => {
-      if (messageValue === '') {
-        setErrorFor('message', 'Message cannot be blank');
-      } else {
-        setSuccessFor('message');
-        isInputsValid.message = true;
-      }
-    });
+    if (nameValue === '') {
+      setErrorFor('name', 'Name cannot be blank');
+      isInputsValid.name = false;
+    } else {
+      setSuccessFor('name');
+      isInputsValid.name = true;
+    }
   };
+
+  const validateEmail = () => {
+    let emailValue = email.value.trim();
+    if (emailValue === '') {
+      setErrorFor('email', 'Email cannot be blank');
+      isInputsValid.email = false;
+    } else if (!isEmail(emailValue)) {
+      setErrorFor('email', 'Email is not valid');
+      isInputsValid.email = false;
+    } else {
+      setSuccessFor('email');
+      isInputsValid.email = true;
+    }
+  };
+
+  const validateSubject = () => {
+    let subjectValue = subject.value.trim();
+    if (subjectValue === '') {
+      setErrorFor('subject', 'Subject cannot be blank');
+      isInputsValid.subject = false;
+    } else {
+      setSuccessFor('subject');
+      isInputsValid.subject = true;
+    }
+  };
+
+  const validateMessage = () => {
+    let messageValue = message.value.trim();
+    if (messageValue === '') {
+      setErrorFor('message', 'Message cannot be blank');
+      isInputsValid.message = false;
+    } else {
+      setSuccessFor('message');
+      isInputsValid.message = true;
+    }
+  };
+
+  name.addEventListener('input', validateName);
+
+  email.addEventListener('input', validateEmail);
+
+  subject.addEventListener('input', validateSubject);
+
+  message.addEventListener('input', validateMessage);
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    validateInputs();
+    validateName();
+    validateEmail();
+    validateSubject();
+    validateMessage();
     console.log(isInputsValid.name, isInputsValid.email, isInputsValid.subject, isInputsValid.message);
     if (isInputsValid.name && isInputsValid.email && isInputsValid.subject && isInputsValid.message) {
       window.location.href = `mailto:abdulmalikadebayo07@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}, ${formData.message} \n
         ${formData.email} \n ${formData.name}
         `;
-      window.location.reload();
+      //   window.location.reload();
     }
   });
 })();

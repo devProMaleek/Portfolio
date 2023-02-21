@@ -530,26 +530,30 @@
               </div>
             </div>
             <div class="right-contact">
-              <form action="#" class="contact-form" id="contact-form" method="post">
+              <form class="contact-form" id="contact-form" method="post">
                 <div class="input-control i-c-2">
-                  <input type="text" placeholder="YOUR NAME" id="name"/>
-                  <small id="nameError"></small>
-                  <input type="email" placeholder="YOUR EMAIL" id="email" />
-                  <small id="emailError"></small>
+                  <div class="">
+                    <input type="text" placeholder="YOUR NAME" id="name" />
+                    <small id="nameError"></small>
+                  </div>
+                  <div class="">
+                    <input type="email" placeholder="YOUR EMAIL" id="email" />
+                    <small id="emailError"></small>
+                  </div>
                 </div>
                 <div class="input-control">
                   <input type="text" placeholder="ENTER SUBJECT" id="subject" />
-                  <small id="subjectError"></small>
+                  <small style="margin-left: 1.5rem" id="subjectError"></small>
                 </div>
                 <div class="input-control">
                   <textarea name="" id="" cols="15" rows="8" placeholder="Message Here..." id="message"></textarea>
-                  <small id="messageError"></small>
+                  <small style="margin-left: 1.5rem" id="messageError"></small>
                 </div>
-                <div class="btn-con">
-                  <button type="submit" class="main-btn">
+                <div class="btn-con" id="submit-btn" style="cursor: pointer;">
+                  <p class="main-btn">
                     <span class="btn-text">Send</span>
                     <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
-                  </button>
+                  </p>
                 </div>
               </form>
             </div>

@@ -24,7 +24,7 @@
 
 .light-mode {
   --color-primary: #FFFFFF;
-  --color-secondary: #F56692;
+  --color-secondary: hsl(var(--hue-color), 100%, 50%);
   --color-white: #454e56;
   --color-black: #000;
   --color-grey0: #f8f8f8;
@@ -829,6 +829,13 @@ section {
     font-size: 2.3rem;
   }
 }
+
+.smallError {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
 @media screen and (max-width: 1432px) {
   .container {
     padding: 7rem 11rem;

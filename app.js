@@ -10,22 +10,105 @@
 
   const themeBtn = document.querySelector('.theme-btn');
   const lightTheme = 'light-mode';
+  const image = document.getElementById('myImg');
 
   const selectedTheme = localStorage.getItem('selected-theme');
 
   const getCurrentTheme = () => (document.body.classList.contains(lightTheme) ? 'light' : 'dark');
 
-  
   if (selectedTheme) {
     // If the validation is fulfilled, we ask what the issue was, to know if we activated or deactivated the dark
     document.body.classList[selectedTheme === 'light' ? 'add' : 'remove'](lightTheme);
+    let currentTheme = getCurrentTheme();
+    console.log(currentTheme);
+    if (currentTheme === 'light') {
+      image.style.filter = 'grayscale(0)';
+    } else if (currentTheme === 'dark') {
+      image.style.filter = 'grayscale(100%)';
+    }
   }
-  
+
   themeBtn.addEventListener('click', () => {
-    console.log(getCurrentTheme() + ' selected')
-    console.log(selectedTheme)
+    let currentTheme = getCurrentTheme();
+    console.log(currentTheme);
+    if (currentTheme === 'dark') {
+      image.style.filter = 'grayscale(0)';
+    } else if (currentTheme === 'light') {
+      image.style.filter = 'grayscale(100%)';
+    }
     document.body.classList.toggle(lightTheme);
-    localStorage.setItem('selected-theme', getCurrentTheme())
+    localStorage.setItem('selected-theme', getCurrentTheme());
+  });
+
+  let htmlAnimation = anime({
+    targets: '.html',
+    width: '90%',
+    duration: 3000,
+    easing: 'linear',
+    autoplay: false,
+  });
+  let cssAnimation = anime({
+    targets: '.css',
+    width: '90%',
+    duration: 3000,
+    easing: 'linear',
+    autoplay: false,
+  });
+  let jsAnimation = anime({
+    targets: '.js',
+    width: '90%',
+    duration: 3000,
+    easing: 'linear',
+    autoplay: false,
+  });
+  let phpAnimation = anime({
+    targets: '.php',
+    width: '90%',
+    duration: 3000,
+    easing: 'linear',
+    autoplay: false,
+  });
+  let laravelAnimation = anime({
+    targets: '.laravel',
+    width: '90%',
+    duration: 3000,
+    easing: 'linear',
+    autoplay: false,
+  });
+  let reactAnimation = anime({
+    targets: '.react',
+    width: '90%',
+    duration: 3000,
+    easing: 'linear',
+    autoplay: false,
+  });
+  let typescriptAnimation = anime({
+    targets: '.typescript',
+    width: '90%',
+    duration: 3000,
+    easing: 'linear',
+    autoplay: false,
+  });
+  let nextjsAnimation = anime({
+    targets: '.nextjs',
+    width: '90%',
+    duration: 3000,
+    easing: 'linear',
+    autoplay: false,
+  });
+
+  new Waypoint({
+    element: document.getElementById('stats'),
+    handler: function (direction) {
+      htmlAnimation.restart();
+      cssAnimation.restart();
+      jsAnimation.restart();
+      reactAnimation.restart();
+      typescriptAnimation.restart();
+      nextjsAnimation.restart();
+      phpAnimation.restart();
+      laravelAnimation.restart();
+    },
   });
 
   let form = document.getElementById('contact-form');

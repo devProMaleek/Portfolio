@@ -28,6 +28,14 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <script defer src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"
+      integrity="sha512-fHXRw0CXruAoINU11+hgqYvY/PcsOWzmj0QmcSOtjlJcqITbPyypc8cYpidjPurWpCnlB8VKfRwx6PIpASCUkQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <title>devProMaleek's Portfolio</title>
   </head>
   <body class="main-content">
@@ -36,7 +44,7 @@
         <div class="left-header">
           <div class="h-shape"></div>
           <div class="image">
-            <img src="img/My Profile pic2.jpg" alt="" />
+            <img src="img/My Profile pic2.jpg" alt="" id="myImg" />
           </div>
         </div>
         <div class="right-header">
@@ -45,17 +53,32 @@
             A Software Engineer.
           </h1>
           <p>
-            A passionate junior software engineer with a strong foundation in software development principles and
-            technologies. I have experience in NextJS, Laravel and TypeScript and have completed many projects in
-            various domains. My portfolio features some of my best projects, demonstrating my expertise in both frontend
-            and backend development.<br />
-
-            <br />
-            I am always eager to learn and keep up with the latest trends and advancements in the field, and I am
-            excited to be a part of the ever-evolving tech industry. If you're looking for a dedicated and enthusiastic
-            software engineer with a proven track record of success, I would love to connect with you and discuss how I
-            can contribute to your team.
+            A passionate Software Engineer with a strong foundation in software development principles and technologies.
+            I have experience in NextJS, Laravel and TypeScript and have completed many projects in various domains. My
+            portfolio features some of my best projects, demonstrating my expertise in both frontend and backend
+            development.
           </p>
+
+          <div class="contact-icons">
+            <div class="contact-icon">
+              <a href="https://web.facebook.com/profile.php?id=100081783975713" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com/devProMaleek" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://github.com/devProMaleek" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.instagram.com/devpromaleek07/" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/devpromaleek/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
+
           <div class="btn-con">
             <a download href="assets/pdf/Adebayo_Abdulmalik_Resume.docx (1).pdf" class="main-btn">
               <span class="btn-text">Download CV</span>
@@ -131,7 +154,7 @@
             </div>
           </div>
         </div>
-        <div class="about-stats">
+        <div class="about-stats" id="stats">
           <h4 class="stat-title">My Skills</h4>
           <div class="progress-bars">
             <div class="progress-bar">
@@ -171,20 +194,38 @@
               </div>
             </div>
             <div class="progress-bar">
-              <p class="prog-title">NodeJS</p>
+              <p class="prog-title">NextJS</p>
               <div class="progress-con">
                 <p class="prog-text">87%</p>
                 <div class="progress">
-                  <span class="node"></span>
+                  <span class="nextjs"></span>
                 </div>
               </div>
             </div>
             <div class="progress-bar">
-              <p class="prog-title">Python</p>
+              <p class="prog-title">TypeScript</p>
               <div class="progress-con">
                 <p class="prog-text">70%</p>
                 <div class="progress">
-                  <span class="python"></span>
+                  <span class="typescript"></span>
+                </div>
+              </div>
+            </div>
+            <div class="progress-bar">
+              <p class="prog-title">Laravel</p>
+              <div class="progress-con">
+                <p class="prog-text">70%</p>
+                <div class="progress">
+                  <span class="laravel"></span>
+                </div>
+              </div>
+            </div>
+            <div class="progress-bar">
+              <p class="prog-title">PHP</p>
+              <div class="progress-con">
+                <p class="prog-text">70%</p>
+                <div class="progress">
+                  <span class="php"></span>
                 </div>
               </div>
             </div>
@@ -511,19 +552,19 @@
               </div>
               <div class="contact-icons">
                 <div class="contact-icon">
-                  <a href="www.facebook.com" target="_blank">
+                  <a href="https://web.facebook.com/profile.php?id=100081783975713" target="_blank">
                     <i class="fab fa-facebook-f"></i>
                   </a>
-                  <a href="#" target="_blank">
+                  <a href="https://twitter.com/devProMaleek" target="_blank">
                     <i class="fab fa-twitter"></i>
                   </a>
-                  <a href="#" target="_blank">
+                  <a href="https://github.com/devProMaleek" target="_blank">
                     <i class="fab fa-github"></i>
                   </a>
-                  <a href="#" target="_blank">
+                  <a href="https://www.instagram.com/devpromaleek07/" target="_blank">
                     <i class="fab fa-instagram"></i>
                   </a>
-                  <a href="#" target="_blank">
+                  <a href="https://www.linkedin.com/in/devpromaleek/" target="_blank">
                     <i class="fab fa-linkedin"></i>
                   </a>
                 </div>
@@ -549,7 +590,7 @@
                   <textarea name="" id="" cols="15" rows="8" placeholder="Message Here..." id="message"></textarea>
                   <small style="margin-left: 1.5rem" id="messageError"></small>
                 </div>
-                <div class="btn-con" id="submit-btn" style="cursor: pointer;">
+                <div class="btn-con" id="submit-btn" style="cursor: pointer">
                   <p class="main-btn">
                     <span class="btn-text">Send</span>
                     <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>

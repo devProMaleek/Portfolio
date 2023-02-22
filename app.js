@@ -7,8 +7,25 @@
       document.getElementById(button.dataset.id).classList.add('active');
     });
   });
-  document.querySelector('.theme-btn').addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
+
+  const themeBtn = document.querySelector('.theme-btn');
+  const lightTheme = 'light-mode';
+
+  const selectedTheme = localStorage.getItem('selected-theme');
+
+  const getCurrentTheme = () => (document.body.classList.contains(lightTheme) ? 'light' : 'dark');
+
+  
+  if (selectedTheme) {
+    // If the validation is fulfilled, we ask what the issue was, to know if we activated or deactivated the dark
+    document.body.classList[selectedTheme === 'light' ? 'add' : 'remove'](lightTheme);
+  }
+  
+  themeBtn.addEventListener('click', () => {
+    console.log(getCurrentTheme() + ' selected')
+    console.log(selectedTheme)
+    document.body.classList.toggle(lightTheme);
+    localStorage.setItem('selected-theme', getCurrentTheme())
   });
 
   let form = document.getElementById('contact-form');
@@ -17,8 +34,6 @@
   let subject = document.getElementById('subject');
   let message = document.querySelector('textarea');
   let submitBtn = document.getElementById('submit-btn');
-
-  console.log(submitBtn)
 
   submitBtn.addEventListener('click', (event) => {
     event.preventDefault();

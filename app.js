@@ -40,76 +40,99 @@
     localStorage.setItem('selected-theme', getCurrentTheme());
   });
 
-  let htmlAnimation = anime({
-    targets: '.html',
-    width: '90%',
-    duration: 3000,
-    easing: 'linear',
-    autoplay: false,
-  });
-  let cssAnimation = anime({
-    targets: '.css',
-    width: '90%',
-    duration: 3000,
-    easing: 'linear',
-    autoplay: false,
-  });
-  let jsAnimation = anime({
-    targets: '.js',
-    width: '90%',
-    duration: 3000,
-    easing: 'linear',
-    autoplay: false,
-  });
-  let phpAnimation = anime({
-    targets: '.php',
-    width: '90%',
-    duration: 3000,
-    easing: 'linear',
-    autoplay: false,
-  });
-  let laravelAnimation = anime({
-    targets: '.laravel',
-    width: '90%',
-    duration: 3000,
-    easing: 'linear',
-    autoplay: false,
-  });
-  let reactAnimation = anime({
-    targets: '.react',
-    width: '90%',
-    duration: 3000,
-    easing: 'linear',
-    autoplay: false,
-  });
-  let typescriptAnimation = anime({
-    targets: '.typescript',
-    width: '90%',
-    duration: 3000,
-    easing: 'linear',
-    autoplay: false,
-  });
-  let nextjsAnimation = anime({
-    targets: '.nextjs',
-    width: '90%',
-    duration: 3000,
-    easing: 'linear',
-    autoplay: false,
-  });
+  // let htmlAnimation = anime({
+  //   targets: '.html',
+  //   width: '90%',
+  //   duration: 3000,
+  //   easing: 'linear',
+  //   autoplay: false,
+  // });
+  // let cssAnimation = anime({
+  //   targets: '.css',
+  //   width: '90%',
+  //   duration: 3000,
+  //   easing: 'linear',
+  //   autoplay: false,
+  // });
+  // let jsAnimation = anime({
+  //   targets: '.js',
+  //   width: '90%',
+  //   duration: 3000,
+  //   easing: 'linear',
+  //   autoplay: false,
+  // });
+  // let phpAnimation = anime({
+  //   targets: '.php',
+  //   width: '90%',
+  //   duration: 3000,
+  //   easing: 'linear',
+  //   autoplay: false,
+  // });
+  // let laravelAnimation = anime({
+  //   targets: '.laravel',
+  //   width: '90%',
+  //   duration: 3000,
+  //   easing: 'linear',
+  //   autoplay: false,
+  // });
+  // let reactAnimation = anime({
+  //   targets: '.react',
+  //   width: '90%',
+  //   duration: 3000,
+  //   easing: 'linear',
+  //   autoplay: false,
+  // });
+  // let typescriptAnimation = anime({
+  //   targets: '.typescript',
+  //   width: '90%',
+  //   duration: 3000,
+  //   easing: 'linear',
+  //   autoplay: false,
+  // });
+  // let nextjsAnimation = anime({
+  //   targets: '.nextjs',
+  //   width: '90%',
+  //   duration: 3000,
+  //   easing: 'linear',
+  //   autoplay: false,
+  // });
 
-  new Waypoint({
-    element: document.getElementById('stats'),
-    handler: function (direction) {
-      htmlAnimation.restart();
-      cssAnimation.restart();
-      jsAnimation.restart();
-      reactAnimation.restart();
-      typescriptAnimation.restart();
-      nextjsAnimation.restart();
-      phpAnimation.restart();
-      laravelAnimation.restart();
-    },
-  });
+  // let ProgressBar = require('progressbar.js');
+  // let bar = new ProgressBar.Line("#html", {
+  //   strokeWidth: 4,
+  //   easing: 'easeInOut',
+  //   duration: 1400,
+  //   color: '#FFEA82',
+  //   trailColor: '#eee',
+  //   trailWidth: 1,
+  //   svgStyle: {width: '100%', height: '100%'},
+  //   text: {
+  //     style: {
+  //       // Text color.
+  //       // Default: same as stroke color (options.color)
+  //       color: '#999',
+  //       position: 'absolute',
+  //       right: '0',
+  //       top: '30px',
+  //       padding: 0,
+  //       margin: 0,
+  //       transform: null
+  //     },
+  //     autoStyleContainer: false
+  //   },
+  //   from: {color: '#FFEA82'},
+  //   to: {color: '#ED6A5A'},
+  //   step: (state, bar) => {
+  //     bar.setText(Math.round(bar.value() * 100) + ' %');
+  //   }
+  // });
+  
+  // bar.animate(1.0);
+
+  // new Waypoint({
+  //   element: document.getElementById('stats'),
+  //   handler: function (direction) {},
+  // });
 
   let form = document.getElementById('contact-form');
   let name = document.getElementById('name');

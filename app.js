@@ -126,7 +126,7 @@
   //     bar.setText(Math.round(bar.value() * 100) + ' %');
   //   }
   // });
-  
+
   // bar.animate(1.0);
 
   // new Waypoint({
@@ -146,12 +146,7 @@
     form.requestSubmit();
   });
 
-  const formData = {
-    name: '',
-    email: email,
-    subject: '',
-    message: '',
-  };
+  const formData = {};
 
   const setErrorFor = (input, message) => {
     let small = document.getElementById(`${input}Error`);
@@ -181,9 +176,11 @@
     if (nameValue === '') {
       setErrorFor('name', 'Name cannot be blank');
       isInputsValid.name = false;
+      return '';
     } else {
       setSuccessFor('name');
       isInputsValid.name = true;
+      return nameValue;
     }
   };
 
@@ -192,12 +189,15 @@
     if (emailValue === '') {
       setErrorFor('email', 'Email cannot be blank');
       isInputsValid.email = false;
+      return '';
     } else if (!isEmail(emailValue)) {
       setErrorFor('email', 'Email is not valid');
       isInputsValid.email = false;
+      return '';
     } else {
       setSuccessFor('email');
       isInputsValid.email = true;
+      return emailValue;
     }
   };
 
@@ -206,9 +206,11 @@
     if (subjectValue === '') {
       setErrorFor('subject', 'Subject cannot be blank');
       isInputsValid.subject = false;
+      return '';
     } else {
       setSuccessFor('subject');
       isInputsValid.subject = true;
+      return subjectValue;
     }
   };
 
@@ -217,9 +219,11 @@
     if (messageValue === '') {
       setErrorFor('message', 'Message cannot be blank');
       isInputsValid.message = false;
+      return '';
     } else {
       setSuccessFor('message');
       isInputsValid.message = true;
+      return messageValue;
     }
   };
 
@@ -237,10 +241,15 @@
     validateEmail();
     validateSubject();
     validateMessage();
-    console.log(isInputsValid.name, isInputsValid.email, isInputsValid.subject, isInputsValid.message);
+    formData.name = validateName();
+    formData.email = validateEmail();
+    formData.subject = validateSubject();
+    formData.message = validateMessage();
     if (isInputsValid.name && isInputsValid.email && isInputsValid.subject && isInputsValid.message) {
-      window.location.href = `mailto:abdulmalikadebayo07@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}, ${formData.message} \n
-        ${formData.email} \n ${formData.name}
+      let body = `Hi, my name is ${formData.name}, ${formData.message}
+                  ${formData.email} 
+                  ${formData.name}`;
+      window.location.href = `mailto:abdulmalikadebayo07@gmail.com?subject=${formData.subject}&body=${body}
         `;
       //   window.location.reload();
     }

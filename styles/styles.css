@@ -64,7 +64,7 @@ section {
   position: absolute;
   left: 0;
   top: 0;
-  padding: 3rem 18rem;
+  padding: 3rem 10rem;
 }
 
 .container {
@@ -193,10 +193,10 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-right: 18rem;
+  padding-right: 10rem;
 }
 .header-content .right-header .name {
-  font-size: 3rem;
+  font-size: 2.8rem;
 }
 .header-content .right-header .name span {
   color: var(--color-secondary);
@@ -319,10 +319,10 @@ section {
   width: 75%;
 }
 .about-stats .progress-bars .progress-bar .progress-con .progress .react {
-  width: 70%;
+  width: 75%;
 }
 .about-stats .progress-bars .progress-bar .progress-con .progress .nextjs {
-  width: 70%;
+  width: 75%;
 }
 .about-stats .progress-bars .progress-bar .progress-con .progress .typescript {
   width: 70%;
@@ -411,7 +411,7 @@ section {
 .portfolios {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
+  grid-gap: 1.5rem;
   margin-top: 3rem;
 }
 .portfolios .portfolio-item {
@@ -421,7 +421,7 @@ section {
 .portfolios .portfolio-item img {
   width: 100%;
   height: 300px;
-  object-fit: cover;
+  object-fit: fill;
   border-radius: 15px;
 }
 .portfolios .portfolio-item .hover-items {
